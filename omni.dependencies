@@ -10,7 +10,9 @@
   {
     "repository": "android_kernel_amazon_bowser-common",
     "target_path": "kernel/amazon/bowser-common"
+  },
+  {
+    "repository": "proprietary_vendor_amazon",
+    "target_path": "vendor/amazon"
   }
 ]
-
-
