@@ -19,9 +19,8 @@ $(call inherit-product, vendor/omni/config/common_tablet.mk)
 $(call inherit-product, device/amazon/tate/full_tate.mk)
 $(call inherit-product, device/amazon/bowser-common/omni_bowser-common.mk)
 
-#TARGET_SCREEN_WIDTH := 1280
-TARGET_SCREEN_WIDTH := 480
-TARGET_SCREEN_HEIGHT := 800
+TARGET_SCREEN_WIDTH := 800
+TARGET_SCREEN_HEIGHT := 1280
 
 PRODUCT_NAME := omni_tate
 PRODUCT_RELEASE_NAME := KindleFireHD
