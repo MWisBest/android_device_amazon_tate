@@ -15,5 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/fml_tate.mk \
     $(LOCAL_DIR)/full_tate.mk \
     $(LOCAL_DIR)/omni_tate.mk
