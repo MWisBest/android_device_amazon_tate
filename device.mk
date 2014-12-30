@@ -28,32 +28,22 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/fstab.tate:/root/fstab.bowser \
     $(DEVICE_FOLDER)/init.bowser.rc:root/init.bowser.rc \
     $(DEVICE_FOLDER)/init.bowser.usb.rc:root/init.bowser.usb.rc \
+    $(DEVICE_FOLDER)/init.recovery.bowser.rc:root/init.recovery.bowser.rc \
     $(DEVICE_FOLDER)/ueventd.bowser.rc:root/ueventd.bowser.rc
-
-# Recovery Trigger / TS module/config
-PRODUCT_COPY_FILES += \
-    $(DEVICE_FOLDER)/prebuilt/vendor/firmware/maxtouch.cfg:recovery/root/vendor/firmware/maxtouch.cfg \
-    $(DEVICE_FOLDER)/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
 # Device settings
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=213 \
     persist.hwc.mirroring.region=0:0:800:1280 \
     persist.hwc.mirroring.transform=3 \
-    persist.demo.hdmirotationlock=true \
-    persist.lab126.touchnoisereject=1 \
-    persist.lab126.chargeprotect=1 \
-    ro.nf.profile=2 \
-    ro.nf.level=512 \
     omap.audio.mic.main=DMic0L \
     omap.audio.mic.sub=DMic0R \
-    omap.audio.power=PingPong \
-    dolby.audio.sink.info=speaker \
     sys.usb.vid=1949 \
     sys.usb.pid=0007 \
-    ro.cwm.forbid_format=/bootloader,/xloader,/misc \
-    ro.camera.sound.forced=0 \
-    ro.camera.video_size=1280x720
+    usb.vendor=1949 \
+    usb.product.adb=0007 \
+    usb.product.mtpadb=0007 \
+    ro.cwm.forbid_format=/bootloader,/xloader,/misc
 
 # Set dirty regions off
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -69,15 +59,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # wifi-only device
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=wifi-only
-
-# Dalvik VM settings
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=8m \
-    dalvik.vm.heapgrowthlimit=128m \
-    dalvik.vm.heapsize=384m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=2m \
-    dalvik.vm.heapmaxfree=8m
 
 $(call inherit-product-if-exists, vendor/amazon/tate/tate-vendor.mk)
 $(call inherit-product-if-exists, vendor/amazon/omap4-common/omap4-common-vendor-4460.mk)
